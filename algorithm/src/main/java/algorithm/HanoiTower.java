@@ -1,3 +1,5 @@
+package algorithm;
+
 public class HanoiTower {
     public int run(int i) {
         return run(i, 'A', 'B', 'C');

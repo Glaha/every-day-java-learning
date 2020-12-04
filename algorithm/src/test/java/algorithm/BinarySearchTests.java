@@ -1,8 +1,9 @@
+package algorithm;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class BinarySearchNonRecursiveTests {
+public class BinarySearchTests {
 
     @Test
     public void givenSortedIntArrWhenSearchByNonRecursiveThenReturnTarget() {
