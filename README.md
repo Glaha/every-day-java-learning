@@ -6,6 +6,7 @@
 2. hanoi tower
 3. dynamic programming - Knapsack problem
 4. dynamic programming - Fibonacci
+5. kmp
 
 ## others
 
@@ -22,8 +23,8 @@ np: Non-deterministic Polynomial problem, can check a answer in polynomial time
 
 dp charicteristics
 
-- remove duplicate problems
-- DP table
+- remove duplicate problems (DP table)
+- optimal sub problems (problems independent)
 
 non recursive
 
