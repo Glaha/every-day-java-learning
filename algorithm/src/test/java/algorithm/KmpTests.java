@@ -14,14 +14,14 @@ public class KmpTests {
 
     @Test
     public void givenStrsWhenUseKmpThenReturnMatchResults() {
-        KmpStrMatch strMatch = new KmpStrMatch("abababca");
+        StrMatchKmp strMatch = new StrMatchKmp("abababca");
         int index = strMatch.match("ababababca");
         Assertions.assertEquals(2, index);
     }
 
     @Test
     public void givenSubStrThenReturnNext() {
-        KmpStrMatch strMatch = new KmpStrMatch("abababca");
+        StrMatchKmp strMatch = new StrMatchKmp("abababca");
         int next = strMatch.next("ababab", 6);
         Assertions.assertEquals(4, next);
     }

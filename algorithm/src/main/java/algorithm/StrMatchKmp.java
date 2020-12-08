@@ -10,14 +10,14 @@ import java.util.concurrent.TimeUnit;
 
 @State(Scope.Thread)
 @Threads(1)
-public class KmpStrMatch {
+public class StrMatchKmp {
 
     private Integer[] next;
     private String patternStr;
 
-    public KmpStrMatch() {}
+    public StrMatchKmp() {}
 
-    public KmpStrMatch(String patternStr) {
+    public StrMatchKmp(String patternStr) {
         next = new Integer[patternStr.length()];
         this.patternStr = patternStr;
     }
@@ -64,12 +64,12 @@ public class KmpStrMatch {
     @Warmup(iterations = 1,batchSize = 1000)
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     public void test() {
-        KmpStrMatch strMatch = new KmpStrMatch("abababca");
+        StrMatchKmp strMatch = new StrMatchKmp("abababca");
         int index = strMatch.match("ababababca");
     }
 
     public static void main(String[] args) throws RunnerException {
-        Options options = new OptionsBuilder().include(KmpStrMatch.class.getSimpleName()).forks(1).build();
+        Options options = new OptionsBuilder().include(StrMatchKmp.class.getSimpleName()).forks(1).build();
         new Runner(options).run();
     }
 }
