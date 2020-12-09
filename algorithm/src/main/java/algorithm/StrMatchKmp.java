@@ -32,8 +32,13 @@ public class StrMatchKmp {
                     i++;
                     j++;
                 } else {
-                    j = next(patternStr.substring(0,j), j - 1);
-                    p = i - j;
+                    if (j == 0) {
+                        i++;
+                        p++;
+                    } else {
+                        j = next(patternStr.substring(0, j), j - 1);
+                        p = i - j;
+                    }
                 }
             }
             return p;
@@ -42,6 +47,8 @@ public class StrMatchKmp {
     }
 
     public int next(String str, int index) {
+        if (index < 0) return 0;
+
         if (next[index] != null) {
             return next[index];
         }

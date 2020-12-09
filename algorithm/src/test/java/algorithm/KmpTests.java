@@ -10,6 +10,9 @@ public class KmpTests {
         StrMatch strMatch = new StrMatch();
         int index = strMatch.match("ababababca", "abababca");
         Assertions.assertEquals(2, index);
+
+        index = strMatch.match("cpdacpdbcpdd", "cpdd");
+        Assertions.assertEquals(8, index);
     }
 
     @Test
@@ -17,6 +20,10 @@ public class KmpTests {
         StrMatchKmp strMatch = new StrMatchKmp("abababca");
         int index = strMatch.match("ababababca");
         Assertions.assertEquals(2, index);
+
+        strMatch = new StrMatchKmp("cpdd");
+        index = strMatch.match("cpdacpdbcpdd");
+        Assertions.assertEquals(8, index);
     }
 
     @Test
